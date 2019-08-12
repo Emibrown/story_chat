@@ -1,0 +1,24 @@
+<pageheader></pageheader>
+
+<br>
+<div class="container">
+	<div class="row">
+		<div class="col-md-12 tool ">
+		   <h5 class="text-primary float-left">Scenes</h5>
+           <a href="" ng-click="newScene()" class="btn btn-outline-info btn-sm float-right">{{sceneBtn}}</a>
+           <a href="" ng-click="newCharacter()" class="btn btn-info btn-sm float-right">New character</a>
+		</div>
+	</div>
+</div>
+<br>
+<div class="container">
+	<div class="row">
+		<div class="col-12" ng-repeat ="scene in scenes">
+			<a href="/admin/scenes/{{scene._id}}">
+				<div class="scene">
+					<h5><span class="fa fa-comments"></span> Scene - {{scene.number}}</h5>
+				</div>
+			</a>
+		</div>
+	</div>
+</div>

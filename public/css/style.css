@@ -1,0 +1,86 @@
+body{
+	background-color: #FAFAFA;
+}
+.bg{
+	background-color: #1B5E20;
+}
+.login{
+	background-color: white;
+	padding: 40px 30px 30px 30px;
+	margin: 20px;
+	border-radius: 10px;
+	-moz-box-shadow:    5px 5px 20px -5px #ccc;
+  	-webkit-box-shadow: 5px 5px 20px -5px #ccc;
+  	box-shadow:         5px 5px 20px -5px #ccc;
+}
+.story{
+	background-color: white;
+	height: 140px;
+	margin:  5px;
+	border-radius: 10px;
+	-moz-box-shadow:    5px 5px 20px -5px #ccc;
+  	-webkit-box-shadow: 5px 5px 20px -5px #ccc;
+  	box-shadow:         5px 5px 20px -5px #ccc;
+}
+.scene{
+	background-color: white;
+	padding: 10px;
+	margin:  5px;
+	border-radius: 10px;
+	-moz-box-shadow:    5px 5px 20px -5px #ccc;
+  	-webkit-box-shadow: 5px 5px 20px -5px #ccc;
+  	box-shadow:         5px 5px 20px -5px #ccc;
+}
+.conversation{
+	background-color: white;
+	padding: 10px 5px 3px 30px;
+	margin:  5px;
+	border-radius: 0px 50px;
+	-moz-box-shadow:    5px 5px 20px -5px #ccc;
+  	-webkit-box-shadow: 5px 5px 20px -5px #ccc;
+  	box-shadow:         5px 5px 20px -5px #ccc;
+}
+.login-logo{
+	text-align: center;
+	color: white;
+	margin: 30px 0px;
+}
+.login-footer, .login-footer a{
+	text-align: center;
+	color: white;
+	font-size: 16px;
+	text-decoration: none;
+}
+.vat-file{
+	background-color:  white;
+	height: 150px;
+	padding: 40px;
+	margin: 10px;
+	-moz-box-shadow:    5px 5px 20px -5px #ccc;
+  	-webkit-box-shadow: 5px 5px 20px -5px #ccc;
+  	box-shadow:         5px 5px 20px -5px #ccc;
+}
+.tool{
+	background-color:  white;
+	padding: 10px;
+	-moz-box-shadow:    5px 5px 20px -5px #ccc;
+  	-webkit-box-shadow: 5px 5px 20px -5px #ccc;
+  	box-shadow:         5px 5px 20px -5px #ccc;
+}
+
+.file {
+  position: relative;
+  overflow: hidden;
+}
+input[type="file"]{
+  position: absolute;
+  font-size: 50px;
+  opacity: 0;
+  right: 0;
+  top: 0;
+  cursor: pointer;
+}
+
+.dialog{
+	padding: 20px 40px;
+}

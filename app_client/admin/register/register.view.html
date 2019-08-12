@@ -1,0 +1,50 @@
+
+<section class="container">
+	<div class="row">
+		<div class="col-md-12 login-logo">
+			<h3 class="text-primary">Story-Chat</h3>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-8 col-md-10 mx-auto login">
+			<p class="text-center text-primary">REGISTER</p>
+			<br>
+			 <form name="registerForm" ng-submit="onSubmit(registerForm.$valid)" required novalidate>
+
+			 	  	<div class="form-row">
+					    <div class="col-md-12 mb-3">
+					      <label>Email Address</label>
+					      <input type="email" name="email" class="form-control form-control-lg" ng-model="credentials.email" required>
+					      <small class="form-text text-danger" ng-show="submitted  && registerForm.email.$invalid">Required.</small>
+					    </div>  
+					</div>
+					<div class="form-group">
+						<label>Set a Password</label>
+		                <input ng-click="clear()" class="form-control form-control-lg" name="password" ng-minlength="8" ng-model="credentials.password" type="password" required>
+		                <small class="form-text text-danger" ng-show="registerForm.password.$error.minlength">8 characters or more</small>
+		                <small class="form-text text-danger"  ng-show="submitted && registerForm.password.$error.required">Required</small>
+		             </div>
+		           
+		            <div class="form-group ">
+		            	<label>Confirm Password</label>
+		                 <input ng-click="clear()" class="form-control form-control-lg" ng-model="credentials.password1" name="password1"  ng-pattern="credentials.password" type="password" required>
+		                 <small class="form-text text-danger" ng-show="registerForm.password1.$error.pattern" >Password miss-match.</small>
+		                 <small class="form-text text-danger"  ng-show="submitted && registerForm.password1.$error.required">Required</small>
+		            </div>
+		            <br>
+		            <br>
+		            <div class="form-group">
+		              <a href="" type="submit" ng-click="onSubmit(registerForm.$valid)" ng-cloak class="ng-cloak btn btn-lg btn-primary form-control">{{btn}}</a>
+		            </div>
+		            
+		        </form>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12 login-footer" >
+			<p class="text-primary">Already have an account?<a class="text-primary" href="/admin"> Login</a></p>
+		</div>
+	</div>
+</section>
+
+	

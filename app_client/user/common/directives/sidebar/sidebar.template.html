@@ -1,0 +1,30 @@
+<!-- Sidebar -->
+        <div id="sidebar-wrapper">
+           <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a class="main-logo">
+                    	<img class="img-responsive" src="/img/tnx-white.png">
+                    </a>
+                </li>
+                <br>
+                <li ng-class="{'active':menuOption=='Programmes'}">
+                    <a href="/admin/programmes">Programmes</a>
+                </li>
+                <li ng-class="{'active':menuOption=='Courses'}">
+                    <a href="/admin/courses">Courses</a>
+                </li>
+                <li ng-class="{'active':menuOption=='Students'}">
+                    <a href="/admin/students">Students</a>
+                </li>
+                <li ng-class="{'active':menuOption=='Lectures'}">
+                    <a href="/admin/lectures">Lectures</a>
+                </li>
+                <li>
+                    <a href="#">Settings</a>
+                </li>
+                <li>
+                    <a href="" ng-click="logout()">logout</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->

@@ -1,0 +1,24 @@
+<pageheader></pageheader>
+
+<br>
+<div class="container">
+	<div class="row">
+		<div class="col-md-12 tool ">
+			<h5 class="text-primary float-left">Stories</h5>
+           <a href="" ng-click="add()" class="btn btn-outline-primary btn-sm float-right">Add Story</a>
+		</div>
+	</div>
+</div>
+<br>
+<div class="container">
+	<div class="row">
+		<div class="col-md-3 col-6" ng-repeat ="story in stories">
+			<a href="/admin/stories/{{story._id}}">
+				<div class="story" style="background-image: url('{{story.cover.url}}'); background-position: center; background-repeat: no-repeat;">
+				</div>
+				<p class="text-center text-info" style="font-size: 14px;">{{story.title}}
+				</p>
+			</a>
+		</div>
+	</div>
+</div>

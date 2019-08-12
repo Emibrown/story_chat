@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app" ng-controller="mainCtrl">
+<head>
+<meta charset="utf-8">
+<base href="/">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
+<link rel="stylesheet" href="/lib/ngDialog/css/ngDialog.min.css">
+<link rel="stylesheet" href="/lib/ngDialog/css/ngDialog-theme-default.css">
+<link rel="stylesheet" type="text/css" href="/css/angular-toastr.css" />
+<link href="/css/simple-sidebar.css" rel="stylesheet">
+<link href="/lib/angular-csp.css" rel="stylesheet">
+<link rel="stylesheet" href="/lib/ngProgress.css">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+
+
+<title>Story chat</title>
+</head>
+<body class="ng-cloak">
+
+
+
+<div class="ng-cloak" ng-view></div>
+
+<script src="/js/jquery.js"></script>
+<script src="/lib/angular.min.js"></script>
+<script src="/lib/angular-route.min.js"></script>
+<script src="/lib/ngprogress.min.js"></script>
+<script src="/app.js"></script>
+<script src="/lib/ngDialog/js/ngDialog.min.js"></script>
+<script src="/lib/dist/angular-animate.min.js"></script>
+<script src="/lib/dist/angular-sanitize.min.js"></script>
+<script src="/lib/dist/ng-file-upload.min.js"></script>
+<script src="/js/angular-toastr.tpls.min.js"></script>
+
+<script src="/admin/common/services/authentication.service.js"></script>
+<script src="/admin/common/directives/pageheader/pageheader.controller.js"></script>
+<script src="/admin/common/directives/pageheader/pageheader.directive.js"></script>
+<script src="/admin/login/login.controller.js"></script>
+<script src="/admin/register/register.controller.js"></script>
+<script src="/admin/stories/stories.controller.js"></script>
+<script src="/admin/scenes/scenes.controller.js"></script>
+<script src="/admin/scene/scene.controller.js"></script>
+
+
+<script src="/js/bootstrap.min.js"></script>
+
+
+
+<script type="text/ng-template" id="addstory">
+	<a href="">Add Story</a>
+
+    <form name="storyForm" ng-submit="add(storyForm.$valid)" class="dialog" required novalidate>
+
+	    <div class="form-group ">
+	       <input ng-click="clear()" name="title" class="form-control" ng-model="story.title" placeholder="Story title" type="text" required>
+           <small class="text-danger" ng-show="submitted && storyForm.title.$error.required">Required.</small>
+	    </div>
+    		
+        <div class="form-group">
+            <div class="file btn btn-info btn-sm">
+                Upload cover
+                <input class="upload" type="file" ngf-select ng-model="story.file" name="file"  
+                 accept="image/*" ngf-max-size="2MB"
+                 ngf-model-invalid="errorFile" ngf-resize="{width: 240, height: 135, quality: 0.5, centerCrop: true, restoreExif: false}">
+            </div>
+            <img ngf-thumbnail="story.file" ngf-size="{width: 30, height: 30, quality: 0.9}">
+            <a href="" style="text-decoration: none" class="text-danger" ng-click="story.file = null" ng-show="story.file">x</a>
+            <p class="text-danger" ng-show="storyForm.file.$error.maxSize">File too large 
+           {{errorFile.size / 1000000|number:1}}MB: max 2MB</p>
+        </div>
+     	<hr>	    
+        <div class="form-group">
+          <a href="" ng-click="add(storyForm.$valid)" class="btn  btn-primary">Add story</a>
+        </div>
+    </form>
+</script> 
+<script type="text/ng-template" id="addChaacter">
+	<a href="">Add Chaacter</a>
+
+    <form name="characterForm" ng-submit="add(characterForm.$valid)" class="dialog" required novalidate>
+
+	    <div class="form-group ">
+	       <input ng-click="clear()" name="name" class="form-control" ng-model="character.name" placeholder="Character Name" type="text" required>
+           <small class="text-danger" ng-show="submitted && characterForm.name.$error.required">Required.</small>
+	    </div>
+     	<hr>	    
+        <div class="form-group">
+          <a href="" ng-click="add(characterForm.$valid)" class="btn  btn-info">{{btn}}</a>
+        </div>
+    </form>
+</script> 
+
+<script type="text/ng-template" id="addConversation">
+	<a href="">Conversation</a>
+
+    <form name="conversationForm" ng-submit="add(conversationForm.$valid)" class="dialog" required novalidate>
+
+	    <div class="form-group ">
+        <select class="form-control" name="character" ng-click="clear()" ng-model="conversation.character" required>
+                    <option value="" disabled>Choose character</option>
+                    <option ng-repeat="character in characters" value="{{character}}">{{character}}</option>
+        </select>
+        <small class="text-danger" ng-show="submitted && conversationForm.character.$error.required">Required.</small>
+	    </div>
+	    <div class="form-group ">
+	       <textarea ng-click="clear()" name="message" class="form-control" ng-model="conversation.message" cols="10" placeholder="Message Here" required></textarea>
+           <small class="text-danger" ng-show="submitted && conversationForm.message.$error.required">Required.</small>
+	    </div>
+     	<hr>	    
+        <div class="form-group">
+          <a href="" ng-click="add(conversationForm.$valid)" class="btn  btn-info">{{btn}}</a>
+        </div>
+    </form>
+</script> 
+
+</body>
+</html>

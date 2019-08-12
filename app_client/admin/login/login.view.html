@@ -1,0 +1,39 @@
+
+<section class="container">
+	<div class="row">
+		<div class="col-md-12 login-logo">
+			<h3 class="text-primary">Story-Chat</h3>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-5 col-md-8 mx-auto login">
+			<p class="text-center text-primary">LOGIN</p>
+			<br>
+			 <form name="loginForm" ng-submit="onSubmit()" required novalidate>
+
+					<div class="form-group">
+						<label>Email Address</label>
+		                <input ng-click="clear()" class="form-control form-control-lg" name="email" ng-model="credentials.email"  type="email">
+		            </div>
+		           
+		          
+		            
+		            <div class="form-group ">
+		            	 <label>Password</label>
+		                 <input ng-click="clear()" class="form-control form-control-lg" ng-model="credentials.password" name="password" type="password">
+		            </div>
+		            <div class="form-group">
+		              <a href="" ng-click="onSubmit()" ng-cloak class="ng-cloak btn btn-lg btn-primary form-control">{{btn}}</a>
+		            </div>
+		            
+		        </form>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12 login-footer" >
+			<p class="text-primary"><a class="text-primary" href="/admin/register">Sign Up</a></p>
+		</div>
+	</div>
+</section>
+
+	
